@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'gum';
+    src: url("./assets/fonts/gum.ttf");
+}
+
+@font-face {
+    font-family: 'pixel';
+    src: url("./assets/fonts/pixel.ttf");
+}
+
+:root {
+  font-family: pixel, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+.btn-landingpage button {
+    color: white;
+    border-color: white;
+    border-style: solid;  
+    border-radius: 1px;
+    border-width: 2px;
+    margin: 2px;
+    padding: 10px;
+}
+
+.btn-landingpage button:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+    color: white;
+    transition: 0.2s ease-in-out;
+    margin-left: 6px;
+    margin-right: 6px;
+}
+
+.btn-landingpage button:active {
+    @apply bg-secondary;
+    color: black;
+    padding: 10px;
+    transition: 0.01s ease-in-out;
+    border: none;
+}
