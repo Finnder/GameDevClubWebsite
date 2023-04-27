@@ -4,11 +4,12 @@ import "./app.css"
 import Game from "./game/Game.svelte"
 import OfficerList from "./lib/OfficerList.svelte"
 import MountainBackground from "./assets/images/midjourney_mountainscape.png"
+import Post from "./lib/Post.svelte";
 
 enum WeekDay {
   MONDAY = "Monday",
   TUESDAY = "Tuesday",
-  WENSDAY = "Wensday",
+  WENSDAY = "Wednesday",
   THURSDAY = "Thursday",
   FRIDAY = "Friday",
   SATERDAY = "Saterday",
@@ -50,7 +51,7 @@ const handleGameClick = () => { currentTab = Tabs.GAME }
       <span class="hover:translate-y-1">Dev</span> 
       <span class="hover:translate-y-1">Club</span> 
     </h1>	
-    <h2 class="text-3xl bg-black/10 w-fit mx-auto p-2 phone:text-xl">Official Website</h2>
+    <h2 class="text-3xl bg-black/10 w-fit mx-auto p-2 select-none phone:text-xl">Official Website</h2>
 
 		<div class="basic_information bg-black/40 border p-5 m-auto mt-5 mb-5 text-2xl text-center w-1/3 phone:w-[90%]">
       <h2><span class="font-bold">Meeting Time: </span><span class="text-emerald-400">{meetingTime} PM</span></h2>
@@ -70,6 +71,15 @@ const handleGameClick = () => { currentTab = Tabs.GAME }
 		{#if currentTab == Tabs.OFFICER_LIST}
 			<OfficerList/>
 		{/if}
+
+    {#if currentTab == Tabs.UPCOMING_MEETINGS}
+    <div class="posts overflow-y">
+      <Post title="First Meeting!"  
+            description="Welcome to our first meeting, we welcome all!"
+          />
+    </div>
+      
+    {/if}
 
 		{#if currentTab == Tabs.GAME}
       <span class="phone:hidden">
