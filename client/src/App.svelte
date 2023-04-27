@@ -44,7 +44,7 @@ const handleGameClick = () => { currentTab = Tabs.GAME }
 
 	<div class="content relative z-20">
     		
-		<h1 class="text-6xl p-2 font-[gum] text-yellow-300 hover:-translate-y-1 select-none w-fit mx-auto phone:text-5xl">Appstate</h1>
+		<h1 class="text-6xl p-2 font-[gum] text-yellow-300 hover:translate-y-1 select-none w-fit mx-auto phone:text-5xl">Appstate</h1>
     <h1 class="text-6xl mb-2 font-[gum] py-3 text-secondary flex gap-7 justify-center select-none phone:text-3xl">
       <span class="hover:translate-y-1">Game</span> 
       <span class="hover:translate-y-1">Dev</span> 
