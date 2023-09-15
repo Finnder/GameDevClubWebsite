@@ -3,7 +3,7 @@
 import "./app.css"
 import Game from "./game/Game.svelte"
 import OfficerList from "./lib/OfficerList.svelte"
-import MountainBackground from "./assets/images/midjourney_mountainscape.png"
+import MountainBackground from "./assets/images/bg_2.png"
 import Post from "./lib/Post.svelte";
 
 enum WeekDay {
@@ -16,17 +16,19 @@ enum WeekDay {
   SUNDAY = "Sunday"
 }
 
+const discordInviteLink = "https://discord.gg/33eHFavezf"
+
 // Meeting Time Data
-const meetingTime : Number = 10; // PM
-const dayOfWeek = WeekDay.THURSDAY;
-const location = "Room 213 | Anne Belk Hall";
+const meetingTime : String = "5:00 - 6:30"; // PM
+const dayOfWeek = WeekDay.FRIDAY;
+const location = "Room 310 | Anne Belk Hall";
 
 let showGame : Boolean = false;
 
 enum Tabs {
 	UPCOMING_MEETINGS,
 	OFFICER_LIST,
-  GAME
+    GAME
 }
 
 let currentTab : Tabs = null
@@ -45,8 +47,8 @@ const handleGameClick = () => { currentTab = Tabs.GAME }
 
 	<div class="content relative z-20">
     		
-		<h1 class="text-6xl p-2 font-[gum] text-yellow-300 hover:translate-y-1 select-none w-fit mx-auto phone:text-5xl">Appstate</h1>
-    <h1 class="text-6xl mb-2 font-[gum] py-3 text-secondary flex gap-7 justify-center select-none phone:text-3xl">
+		<h1 class="text-6xl p-2 font-[gum] text-yellow-300 text-primary hover:translate-y-1 select-none w-fit mx-auto phone:text-5xl">Appstate</h1>
+    <h1 class="text-6xl text-white mb-2 font-[gum] py-3 text-secondary flex gap-7 justify-center select-none phone:text-3xl">
       <span class="hover:translate-y-1">Game</span> 
       <span class="hover:translate-y-1">Dev</span> 
       <span class="hover:translate-y-1">Club</span> 
@@ -72,20 +74,35 @@ const handleGameClick = () => { currentTab = Tabs.GAME }
 			<OfficerList/>
 		{/if}
 
-    {#if currentTab == Tabs.UPCOMING_MEETINGS}
-    <div class="posts overflow-y">
-      <Post title="First Meeting!"  
-            description="Welcome to our first meeting, we welcome all!"
+        {#if currentTab == Tabs.UPCOMING_MEETINGS}
+        <div class="posts overflow-scroll">
+
+          <Post title="Our First Meeting!"  
+                description="Welcome all adventurers! This will be the first of many meetings in the game developement club.
+                All of the officers will introduce themselves and we will explain what the club will be doing for the future."
+                date="09/15/2023"
           />
-    </div>
-      
-    {/if}
+          <Post title="Our First Meeting!"  
+                description="Welcome all adventurers! This will be the first of many meetings in the game developement club.
+                All of the officers will introduce themselves and we will explain what the club will be doing for the future."
+                date="09/15/2023"
+          />
+          <Post title="Our First Meeting!"  
+                description="Welcome all adventurers! This will be the first of many meetings in the game developement club.
+                All of the officers will introduce themselves and we will explain what the club will be doing for the future."
+                date="09/15/2023"
+          />
+        </div>
+          
+        {/if}
 
 		{#if currentTab == Tabs.GAME}
-      <span class="phone:hidden">
-        <Game/>
-      </span>
+          <span class="phone:hidden">
+            <Game/>
+          </span>
 		{/if}
+    
+        <a href="{discordInviteLink}" class="bg-discord p-1 fixed right-0 bottom-0 m-2 rounded hover:bg-discord/80 active:bg-discord/60">JOIN THE DISCORD!</a>
 
 	</div>
 </main>

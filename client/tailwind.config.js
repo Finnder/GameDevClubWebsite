@@ -8,11 +8,10 @@ export default {
   theme: {
     extend: {
         colors: {
-            primary:"#06D6A0",
-            secondary:"#EF476F",
-            dark:"#26547C",
-            light:"#FFFCF9",
-            golden:"#FFD166",
+            primary:"#49c5b6",
+            secondary:"#2779a7",
+            dark:"#000",
+            discord: "#7289DA"
         },
         screens: {
           'phone': { min: '0px', max: '640px'}
